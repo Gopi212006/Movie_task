@@ -1,0 +1,53 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="movie.css" />
+  </head>
+  <body>
+    <div id="registerForm">
+      <h2>Register</h2>
+
+      <div class="form-input">
+        <input type="text" id="reg-userName" placeholder="Username" required />
+      </div>
+      <div class="form-input">
+        <input type="email" id="reg-email" placeholder="Email" required />
+      </div>
+      <div class="form-input">
+        <input type="text" id="reg-name" placeholder="name" required />
+      </div>
+      <button id="register-btn">Register</button>
+      <p class="toggle"><a href="login.html">have an account? Login</a></p>
+    </div>
+
+    <script>
+      let registerBtns = document.getElementById("register-btn");
+
+      registerBtns.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        let regiName = document.getElementById("reg-name").value.trim();
+        let regiEmail = document.getElementById("reg-email").value.trim();
+        let regiUserName = document.getElementById("reg-userName").value.trim();
+
+        if (!regiName || !regiEmail || !regiUserName) {
+          alert("fill details");
+          return;
+        }
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        let newuser = { regiName, regiEmail, regiUserName };
+        users.push(newuser);
+        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("loginuser", JSON.stringify(newuser));
+        alert("Register");
+        window.location.href = "dashboard.html";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(to right, #141e30, #243b55);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #addmovieform {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        width: 425px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      input[type="url"],
+      input[type="date"] {
+        width: 95%;
+        padding: 10px;
+        margin-top: 5px;
+        border: none;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        font-size: 16px;
+        outline: none;
+      }
+
+      input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      #genre-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        margin-top: 5px;
+      }
+
+      #genre-container label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 14px;
+      }
+
+      input[type="checkbox"] {
+        accent-color: #ff9800;
+        transform: scale(1.2);
+      }
+
+      #addMovieBtn {
+        width: 100%;
+        padding: 12px;
+        background: #ff9800;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 6px;
+        margin-top: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      #addMovieBtn:hover {
+        background: #e68900;
+      }
+
+      h3 {
+        text-align: center;
+      }
+    </style>
+
+    <form id="addmovieform">
+      <div id="container">
+        <h3>Add Movie</h3>
+
+        <label for="title">Title</label>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Enter a Movie"
+          required
+        />
+
+        <label for="language">Language</label>
+        <input
+          type="text"
+          name="language"
+          id="language"
+          placeholder="Enter a language"
+          required
+        />
+
+        <label>Genre</label>
+        <div id="genre-container">
+          <label
+            ><input type="checkbox" name="genre" value="28" /> Action</label
+          >
+          <label
+            ><input type="checkbox" name="genre" value="12" /> Adventure</label
+          >
+          <label
+            ><input type="checkbox" name="genre" value="35" /> Comedy</label
+          >
+          <label><input type="checkbox" name="genre" value="80" /> Crime</label>
+          <label><input type="checkbox" name="genre" value="18" /> Drama</label>
+          <label
+            ><input type="checkbox" name="genre" value="10751" /> Family</label
+          >
+          <label
+            ><input type="checkbox" name="genre" value="14" /> Fantasy</label
+          >
+          <label
+            ><input type="checkbox" name="genre" value="36" /> History</label
+          >
+          <label
+            ><input type="checkbox" name="genre" value="10749" /> Romance</label
+          >
+          <label
+            ><input type="checkbox" name="genre" value="53" /> Thriller</label
+          >
+        </div>
+
+        <label for="rating">Rating</label>
+        <input
+          type="number"
+          name="rating"
+          id="rating"
+          min="0"
+          max="9"
+          step="1"
+          placeholder="Enter a rating"
+          required
+        />
+
+        <label for="release_date">Release Date</label>
+        <input type="date" name="release_date" id="release_date" required />
+
+        <label for="poster">Poster</label>
+        <input
+          type="url"
+          name="poster"
+          id="poster"
+          placeholder="Enter a poster URL"
+          required
+        />
+
+        <div>
+          <label for="adult">Adult</label>
+          <p>Above 18+ click the checkbox</p>
+          <input type="checkbox" name="adult" id="adult" />
+        </div>
+        <button id="addMovieBtn">Add Movie</button>
+      </div>
+    </form>
+
+    
+    
+    <script>
+
+
+
+            let addMov=document.getElementById("addmovieform")
+            console.log(addMov);
+            
+
+            addMov.addEventListener('click',()=>{
+                console.log("hii");
+                // window.location.href="dashboard.html"
+                
+            })
+
+
+
+
+
+    </script>
+  </body>
+</html>
