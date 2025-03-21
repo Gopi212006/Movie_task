@@ -166,11 +166,7 @@
         <label for="poster">Poster</label>
         <input
           type="url"
-          name="poster"
-          id="poster"
-          placeholder="Enter a poster URL"
-          required
-        />
+          name="poster"id="poster"  placeholder="Enter a poster URL" required/>
 
         <div>
           <label for="adult">Adult</label>
@@ -181,26 +177,55 @@
       </div>
     </form>
 
-
-    
     <script>
+      let addMov = document.getElementById("addMovieBtn");
+      console.log(addMov);
+
+      addMov.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        let newMovie = new XMLHttpRequest();
+        newMovie.open("POST", "https://mimic-server-api.vercel.app/movies");
+        newMovie.setRequestHeader("Content-Type", "application/json");
 
 
+  let title = document.getElementById("title").value;
 
-            let addMov=document.getElementById("addmovieform")
-            console.log(addMov);
-            
+let language = document.getElementById("language").value;
 
-            addMov.addEventListener('click',()=>{
-                console.log("hii");
-                // window.location.href="index.html"
-                
-            })
+let  releasedate = document.getElementById("release_date").value;
 
+let rating = document.getElementById("rating").value;
 
+let poster = document.getElementById("poster").value;
 
+  let adult = document.getElementById("adult")
 
 
+  let gener = [...document.querySelectorAll('input[name="genre"]:checked')].map(checkbox=> parseInt(checkbox.value));
+      
+  
+  let newMovda={
+        "adult": adult?adult.checked:false,
+        "genre_ids": gener,
+        "original_language": language,
+        "poster_path": poster,
+        "release_date": releasedate,
+        "title": title,
+        "vote_average": rating
+    };
+
+    newMovie.send(JSON.stringify(newMovda))
+       
+      console.log(newMovda);
+        
+        
+        
+        
+        window.location.href = "dashboard.html";
+
+
+      });
     </script>
   </body>
 </html>
