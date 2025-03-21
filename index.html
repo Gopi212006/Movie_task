@@ -6,227 +6,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="movie.css" />
   </head>
   <body>
-    <style>
-      /* General Styles */
-      body {
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        background-color: #f8e3c7;
-        font-family: Arial, sans-serif;
-      }
-
-      /* Header */
-      #header {
-        width: 100%;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 22px;
-        font-weight: bold;
-        background-color: rgb(250, 165, 253);
-        color: black;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Search Bar & Buttons Container */
-      #search-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        margin: 20px 0;
-      }
-
-      /* Input Field */
-      input {
-        width: 350px;
-        height: 40px;
-        padding-left: 15px;
-        font-size: 16px;
-        border: 2px solid #ff5f5f;
-        border-radius: 5px;
-        outline: none;
-        transition: 0.3s ease-in-out;
-      }
-
-      /* Input Focus Effect */
-      input:focus {
-        border-color: #d82a2a;
-        box-shadow: 0 0 5px rgba(216, 42, 42, 0.5);
-      }
-      #search-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        margin: 20px 0;
-      }
-
-      #search-container input {
-        width: 350px;
-        height: 40px;
-        font-size: 16px;
-        border: 2px solid #ff5f5f;
-        border-radius: 5px;
-        outline: none;
-        transition: 0.3s;
-      }
-
-      #search-container input:focus {
-        border-color: #d82a2a;
-        box-shadow: 0 0 5px rgba(216, 42, 42, 0.5);
-      }
-
-      #search-container button {
-        font-size: 20px;
-        background-color: #ff5f5f;
-        color: white;
-        height: 42px;
-        width: 50px;
-        border-radius: 5px;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: 0.3s;
-      }
-
-      #search-container button:hover {
-        background-color: #d82a2a;
-      }
-
-      #newMovie {
-        width: 150px;
-        height: 42px;
-        font-size: 16px;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        background-color: #ff4646;
-        color: white;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-
-      #newMovie:hover {
-        background-color: #d82a2a;
-      }
-
-      #newMovie {
-        width: 150px;
-        height: 42px;
-        font-size: 16px;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        background-color: #ff4646;
-        color: white;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-
-      #newMovie:hover {
-        background-color: #d82a2a;
-      }
-
-      #maincontainer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        padding: 20px;
-      }
-
-      #card-cont {
-        width: 250px;
-        height: 380px;
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        padding: 15px;
-        transition: 0.3s ease-in-out;
-      }
-
-      #card-cont:hover {
-        transform: scale(1.05);
-      }
-
-      #card-cont img {
-        width: 100%;
-        height: 180px;
-        border-radius: 10px 10px 0 0;
-      }
-
-      .title {
-        font-size: 18px;
-        font-weight: bold;
-        margin: 8px 0;
-        color: black;
-      }
-
-      #card-cont p {
-        font-size: 14px;
-        color: #555;
-        margin: 5px 0;
-        line-height: 1.4;
-      }
-
-      #Booking {
-        padding: 10px;
-        width: 100%;
-        font-size: 18px;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        background-color: rgb(250, 74, 74);
-        color: white;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-
-      #Booking:hover {
-        background-color: #d82a2a;
-      }
-      #inputVal {
-        height: 30px;
-      }
-      #popUpNames {
-        width: 100%;
-        height: 30px;
-        margin: 0px auto;
-
-        font-size: x-large;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        align-items: center;
-
-        background-color: #d82a2a;
-      }
-    </style>
-
-    <!-- <div id="divContainer"></div> -->
-
-    <div id="search-container">
-      <input type="text" id="inputVal" placeholder="Search for movies..." />
-      <button id="searchBtn">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
+    <div class="container">
+      <div id="loginForm">
+        <h2>Login</h2>
+        <div class="form-input">
+          <input type="email" id="log-email" placeholder="Email" required />
+        </div>
+        <div class="form-input">
+          <input type="text" id="log-name" placeholder="name" required />
+        </div>
+        <button id="login-btn">Login</button>
+        <p class="toggle">
+          <a href="signup.html">Don't have an account? Register</a>
+        </p>
+      </div>
     </div>
 
-    <button id="newMovie">Add new Movie</button>
-    <div id="maincontainer"></div>
+    <script>
+      let logBtn = document.getElementById("login-btn");
 
+      logBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let gmailInp = document.getElementById("log-email").value.trim();
+        let nameInp = document.getElementById("log-name").value.trim();
 
-    <script src="movie.js"></script>
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+        let storeuser = users.find(
+          (user) => user.regiEmail === gmailInp && user.regiName === nameInp
+        );
+        if (storeuser) {
+          alert("login");
+          localStorage.setItem("loginuser", JSON.stringify(storeuser));
+          window.location.href = "dashboard.html";
+        } else {
+          alert("Not Found");
+        }
+      });
+    </script>
   </body>
 </html>
